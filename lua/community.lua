@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.pack.php" },
+  { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.recipes.vscode-icons" },
+  { import = "astrocommunity.motion.mini-move" },
 }
