@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -41,6 +39,9 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "volar",
+      "eslint",
+      "tsserver",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -55,6 +56,28 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      tsserver = function(_, opts)
+        local mason_registry = require "mason-registry"
+        local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+          .. "/node_modules/@vue/language-server"
+
+        local lspconfig = require "lspconfig"
+
+        lspconfig.tsserver.setup {
+          init_options = {
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = vue_language_server_path,
+                languages = { "vue" },
+              },
+            },
+          },
+          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+          name = opts.name,
+          capabilities = opts.capabilities,
+        }
+      end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
