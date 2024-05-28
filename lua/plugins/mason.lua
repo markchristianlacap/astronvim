@@ -12,9 +12,9 @@ return {
         "lua_ls",
         "volar",
         "tsserver",
-        "eslint",
         "csharp_ls",
         "intelephense",
+        "eslint",
 
         -- add more arguments for adding more language servers
       })

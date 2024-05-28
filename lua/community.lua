@@ -14,4 +14,6 @@ return {
   { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.recipes.vscode-icons" },
   { import = "astrocommunity.motion.mini-move" },
+  { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.motion.harpoon" },
 }

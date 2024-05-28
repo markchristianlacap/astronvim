@@ -40,7 +40,6 @@ return {
     servers = {
       -- "pyright"
       "volar",
-      "eslint",
       "tsserver",
       "intelephense",
     },
