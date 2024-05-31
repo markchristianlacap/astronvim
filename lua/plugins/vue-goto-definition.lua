@@ -1,3 +1,4 @@
+if vim.g.vscode then return {} end -- don't do anything in non-vscode instances
 local opts = {
   filters = {
     auto_imports = true,

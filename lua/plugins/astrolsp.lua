@@ -1,3 +1,4 @@
+if vim.g.vscode then return {} end -- don't do anything in non-vscode instances
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -30,6 +31,8 @@ return {
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
+        "volar",
+        "tsserver",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -40,8 +43,8 @@ return {
     servers = {
       -- "pyright"
       "volar",
-      "tsserver",
       "intelephense",
+      "csharp_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -56,28 +59,6 @@ return {
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
-      tsserver = function(_, opts)
-        local mason_registry = require "mason-registry"
-        local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
-          .. "/node_modules/@vue/language-server"
-
-        local lspconfig = require "lspconfig"
-
-        lspconfig.tsserver.setup {
-          init_options = {
-            plugins = {
-              {
-                name = "@vue/typescript-plugin",
-                location = vue_language_server_path,
-                languages = { "vue" },
-              },
-            },
-          },
-          filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-          name = opts.name,
-          capabilities = opts.capabilities,
-        }
-      end,
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
