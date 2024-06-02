@@ -14,6 +14,7 @@ return {
         "csharp_ls",
         "intelephense",
         "eslint",
+        "typos_lsp",
 
         -- add more arguments for adding more language servers
       })

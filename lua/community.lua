@@ -7,8 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.cs" },
-  { import = "astrocommunity.pack.vue" },
-  -- import/override with your plugins folder
+  -- -- import/override with your plugins folder
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
