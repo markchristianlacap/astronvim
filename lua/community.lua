@@ -5,8 +5,6 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.cs" },
   -- -- import/override with your plugins folder
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.completion.codeium-vim" },
@@ -16,4 +14,11 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.harpoon" },
+  --  LSP: Configuration
+  { import = "astrocommunity.pack.bash" },
+  { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.fish" },
+  { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.cs" },
 }
