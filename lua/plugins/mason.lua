@@ -15,7 +15,9 @@ return {
         "intelephense",
         "eslint",
         "typos_lsp",
-
+        "emmet_ls",
+        "html",
+        "cssls",
         -- add more arguments for adding more language servers
       })
     end,
