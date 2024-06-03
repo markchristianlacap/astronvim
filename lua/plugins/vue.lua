@@ -20,9 +20,9 @@ local opts = {
 }
 
 return {
-    {
-  "catgoose/vue-goto-definition.nvim",
-  event = "BufReadPre",
-  opts = opts,
+  {
+    "catgoose/vue-goto-definition.nvim",
+    event = "BufReadPre",
+    opts = opts,
+  },
 }
-  }
