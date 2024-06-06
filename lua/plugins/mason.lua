@@ -31,6 +31,10 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "stylua",
         "pint",
+        "cspell",
+        "codespell",
+        "misspell",
+        "cspell",
         -- add more arguments for adding more null-ls sources
       })
     end,
