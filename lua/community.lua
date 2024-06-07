@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.harpoon" },
+  { import = "astrocommunity.motion.mini-ai" },
   --  LSP: Configuration
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cpp" },
