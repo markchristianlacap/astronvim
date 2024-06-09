@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if vim.g.vscode then return {} end -- don't do anything in non-vscode instances
 
 -- Customize Treesitter
 

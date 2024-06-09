@@ -5,7 +5,10 @@ if vim.g.vscode then return {} end -- don't do anything in non-vscode instances
 ---@type LazySpec
 return {
   "nvimtools/none-ls.nvim",
-  dependencies = { "mason.nvim", "davidmh/cspell.nvim" },
+  dependencies = {
+    "mason.nvim",
+    "davidmh/cspell.nvim",
+  },
   opts = function(_, config)
     -- config variable is the default configuration table for the setup function call
     local null_ls = require "null-ls"
