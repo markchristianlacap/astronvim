@@ -6,8 +6,9 @@
 return {
   "AstroNvim/astrocommunity",
   -- -- import/override with your plugins folder
+  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.recipes.vscode" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.completion.codeium-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.recipes.vscode-icons" },
@@ -21,5 +22,5 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.cs" },
+  -- { import = "astrocommunity.pack.cs" },
 }

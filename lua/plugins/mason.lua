@@ -11,10 +11,8 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
         "volar",
-        "csharp_ls",
         "intelephense",
         "eslint",
-        "typos_lsp",
         "emmet_ls",
         "html",
         "cssls",
