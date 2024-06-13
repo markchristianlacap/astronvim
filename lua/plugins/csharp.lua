@@ -1,13 +1,28 @@
 return {
   {
-    -- "markchristianlacap/cs_to_ts.nvim",
+    dir = "~/dev/plugins/csharp-namespace.nvim",
+    ft = "cs",
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("csharp-namespace").setup {}
+      local cmp = require "cmp"
+      local config = cmp.get_config()
+      table.insert(config.sources, {
+        name = "csharp-namespace",
+        group_index = 1,
+        priority = 10000,
+      })
+      cmp.setup(config)
+    end,
+  },
+  {
     dir = "~/dev/plugins/cs-to-ts.nvim",
-    -- enable on visual mode
     keys = {
       {
         "<leader>lt",
         function()
-          -- Use the plugin
           local cs_to_ts = require "cs-to-ts"
           local utils = require "cs-to-ts.utils"
           local code = utils.getSelected()
@@ -24,5 +39,12 @@ return {
         mode = { "v" },
       },
     },
+  },
+  {
+    "iabdelkareem/csharp.nvim",
+    dependencies = {
+      "Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
+    },
+    config = function() require("csharp").setup() end,
   },
 }

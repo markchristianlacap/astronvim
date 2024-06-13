@@ -22,5 +22,4 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.lua" },
-  -- { import = "astrocommunity.pack.cs" },
 }

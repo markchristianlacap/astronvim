@@ -58,8 +58,8 @@ return {
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
       volar = function(_, opts)
-        local lspconfig = require "lspconfig"
-        lspconfig.volar.setup {
+        local lsp = require "lspconfig"
+        lsp.volar.setup {
           init_options = {
             vue = {
               hybridMode = false,
